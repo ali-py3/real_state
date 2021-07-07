@@ -20,10 +20,10 @@ img {
 }
 
 #showcase {
-  background: url(../img/showcase.jpg) no-repeat top center fixed;
+  background: url(../img/4.jpg) no-repeat top center fixed;
   position: relative;
   min-height: 650px;
-  color: #fff;
+  color: #ffffff;
   padding-top: 6rem;
 }
 #showcase .home-search {
