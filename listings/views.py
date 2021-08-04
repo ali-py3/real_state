@@ -13,9 +13,10 @@ def index(request):
     paginator = Paginator(listings, 6)
     page = request.GET.get('page')
     paged_listings = paginator.get_page(page)
-
+    mapbox_access_token = 'pk.eyJ1IjoicHpra2siLCJhIjoiY2tyeHA4czZ5MDl6MzJ2bXNybjNjd21mYSJ9.ZMQr197_oeR2QvOGvN8YCA'
     context = {
-        'listings': paged_listings
+        'listings': paged_listings,
+        'mapbox_access_token': mapbox_access_token
     }
 
     return render(request, 'listings/listings.html', context)

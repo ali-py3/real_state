@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
+    'django_google_maps',
+    'location_field.apps.DefaultConfig',
 
 ]
 
@@ -143,3 +145,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # EMAIL_HOST_USER = 'your_gmail_username@gmail.com'
 # EMAIL_HOST_PASSWORD = 'your_gmail_password'
 # EMAIL_USE_TLS = True
+# LOCATION_FIELD = {
+# 'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
+# 'provider.google.api_key': 'AIzaSyBt4M-0eb-EmjP8pYx646ZSrJuwJvh0hY8',
+# 'provider.google.api_libraries': '',
+# 'provider.google.map.type': 'ROADMAP',
+# }
+GOOGLE_API_KEY = 'AIzaSyBt4M-0eb-EmjP8pYx646ZSrJuwJvh0hY8'
