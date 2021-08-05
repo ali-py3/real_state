@@ -9,7 +9,7 @@ from .models import Listing, Category
 def index(request):
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
 
-    paginator = Paginator(listings, 6)
+    paginator = Paginator(listings, 3)
     page = request.GET.get('page')
     paged_listings = paginator.get_page(page)
     mapbox_access_token = 'pk.eyJ1IjoicHpra2siLCJhIjoiY2tyeHA4czZ5MDl6MzJ2bXNybjNjd21mYSJ9.ZMQr197_oeR2QvOGvN8YCA'
@@ -21,13 +21,13 @@ def index(request):
     return render(request, 'listings/listings.html', context)
 
 
-def category(request, slug):
-    # article_list = category.article.published()
-
-    context = {
-        "category": get_object_or_404(Category, slug=slug, status=True)
-    }
-    return render(request, 'listings/category.html', context)
+# def category(request, slug):
+#     # article_list = category.article.published()
+#
+#     context = {
+#         "category": get_object_or_404(Category, slug=slug, status=True)
+#     }
+#     return render(request, 'listings/category.html', context)
 
 
 def listing(request, listing_id):

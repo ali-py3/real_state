@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h1 class="display-4">فهرست املاک های ثبت شده</h1>
+                    <h1 class="display-4">{{ category.title }}</h1>
                     <p class="lead">
 
                     </p>
@@ -30,9 +30,10 @@
                     <li class="breadcrumb-item active">
                         <a href="{% url 'listings' %}">فهرست املاک</a>
                     </li>
-                    <li class="breadcrumb-item active"><a href="">
+                    <li class="breadcrumb-item active"><a href="{% url 'category' category.slug %}">
                         {{ category.title }}
                     </a></li>
+
                 </ol>
             </nav>
         </div>
@@ -43,7 +44,7 @@
         <div class="container">
             <div class="row">
                 {% if category %}
-                    {% for listing in category.article.all %}
+                    {% for listing in category.cater.all %}
                         <div class="col-md-6 col-lg-4 mb-4">
                             <div class="card listing-preview">
                                 <img class="card-img-top" src="{{ listing.photo_main.url }}" alt=""/>

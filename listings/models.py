@@ -7,7 +7,7 @@ from realtors.models import Realtor
 
 class ArticleManage(models.Manager):
     def published(self):
-        return self.filter(status='p')
+        return self.filter(is_published=True)
 
 class CategoryManager(models.Manager):
     def active(self):
@@ -31,7 +31,7 @@ class Category(models.Model):
 
 class Listing(models.Model):
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING,verbose_name="مشاوره املک")
-    category = models.ManyToManyField(Category, verbose_name="دسته بندی", related_name="article")
+    category = models.ManyToManyField(Category, verbose_name="دسته بندی", related_name="cater")
     title = models.CharField(max_length=200,verbose_name="عنوان")
     address = models.CharField(max_length=200, verbose_name="ادرس")
     city = models.CharField(max_length=100, verbose_name="شهر")

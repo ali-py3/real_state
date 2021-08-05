@@ -139,6 +139,12 @@
                     </div>
                     <!-- Fields -->
                     <div class="row mb-5 fields">
+                        <!-- Description -->
+                        <div class="row mb-5">
+                            <div class="col-md-12">
+                                {{ listing.description }}
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item text-secondary">
@@ -176,7 +182,7 @@
 
                             </ul>
                         </div>
-{#                        <div id='map' width="100%" style='height:400px'></div>#}
+                        {#                        <div id='map' width="100%" style='height:400px'></div>#}
                         <div id='map' style='width: 600px; height: 300px; direction: rtl'></div>
                         <script>
                             mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
@@ -190,12 +196,7 @@
                         </script>
                     </div>
 
-                    <!-- Description -->
-                    <div class="row mb-5">
-                        <div class="col-md-12">
-                            {{ listing.description }}
-                        </div>
-                    </div>
+
                 </div>
                 <div class="col-md-3">
                     <div class="card mb-3">
