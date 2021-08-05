@@ -1,6 +1,6 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
-{% load humanize %} 
+{% load humanize %}
 
 {% block title %} | فهرست املاک های ثبت شده {% endblock %}
 
@@ -28,6 +28,13 @@
           <a href="{% url 'index' %}"> <i class="fas fa-home"></i> خانه</a>
         </li>
         <li class="breadcrumb-item active">فهرست املاک</li>
+          <li>
+              <a href="">
+                  {% for cat in category.article.all %}
+                      <a href="">#{{ cat.title }}</a>
+                  {% endfor %}
+              </a>
+          </li>
       </ol>
     </nav>
   </div>
@@ -94,7 +101,7 @@
           </div>
         </div>
       </div>
-      {% endfor %} 
+      {% endfor %}
       {% else %}
       <div class="col-md-12">
         <p>هیچ ملکی ثبت نشده است</p>
@@ -121,12 +128,12 @@
             <a class="page-link">&laquo;</a>
           </li>
 
-          {% endif %} 
+          {% endif %}
 
           {% for i in listings.paginator.page_range %}
-            
+
             {% if listings.number == i %}
-            
+
             <li class="page-item active">
               <a class="page-link">{{i}}</a>
             </li>
@@ -135,8 +142,8 @@
             <li class="page-item">
               <a href="?page={{i}}" class="page-link">{{i}}</a>
             </li>
-            {% endif %} 
-          
+            {% endif %}
+
           {% endfor %}
 
           {% if listings.has_next %}
@@ -147,11 +154,11 @@
           </li>
 
           {% else %}
-          
+
           <li class="page_item disabled">
             <a class="page-link">&raquo;</a>
           </li>
-          {% endif %} 
+          {% endif %}
         </ul>
         {% endif %}
       </div>

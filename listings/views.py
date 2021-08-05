@@ -3,11 +3,10 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 from .choices import price_choices, bedroom_choices, state_choices
 
-from .models import Listing
+from .models import Listing, Category
 
 
 def index(request):
-
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
 
     paginator = Paginator(listings, 6)
@@ -16,14 +15,22 @@ def index(request):
     mapbox_access_token = 'pk.eyJ1IjoicHpra2siLCJhIjoiY2tyeHA4czZ5MDl6MzJ2bXNybjNjd21mYSJ9.ZMQr197_oeR2QvOGvN8YCA'
     context = {
         'listings': paged_listings,
-        'mapbox_access_token': mapbox_access_token
+        'mapbox_access_token': mapbox_access_token,
     }
 
     return render(request, 'listings/listings.html', context)
 
 
-def listing(request, listing_id):
+def category(request, slug):
+    # article_list = category.article.published()
 
+    context = {
+        "category": get_object_or_404(Category, slug=slug, status=True)
+    }
+    return render(request, 'listings/category.html', context)
+
+
+def listing(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
 
     context = {
@@ -34,7 +41,6 @@ def listing(request, listing_id):
 
 
 def search(request):
-
     queryset_list = Listing.objects.order_by('-list_date')
 
     # Keywords

@@ -177,14 +177,15 @@
                             </ul>
                         </div>
 {#                        <div id='map' width="100%" style='height:400px'></div>#}
-                        <div id='map' style='width: 400px; height: 300px;'></div>
+                        <div id='map' style='width: 600px; height: 300px; direction: rtl'></div>
                         <script>
-                            mapboxgl.accessToken = 'pk.eyJ1IjoicHpra2siLCJhIjoiY2tyeHA4czZ5MDl6MzJ2bXNybjNjd21mYSJ9.ZMQr197_oeR2QvOGvN8YCA';
+                            mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
                             var map = new mapboxgl.Map({
                                 container: 'map',
-                                style: 'mapbox://styles/mapbox/streets-v11',
-                                center: [50, 35],
-                                zoom: 10
+                                style: 'mapbox://styles/pzkkk/ckrxt3fb62wtq17rype9mlm35',
+
+                                {#center: [48, 35],#}
+                                {#zoom: 9#}
                             });
                         </script>
                     </div>

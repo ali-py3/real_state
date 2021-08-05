@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% load humanize %}
 
@@ -14,10 +14,10 @@
         <h1 class="display-4 mb-4">
           مشاور املاک
         </h1>
-        <p class="lead">
+        <h1>
+            {{ category.title }}
 
-            خرید ، فروش ، رهن ،اجاره
-        </p>
+        </h1>
         <div class="search">
           <form action="{% url 'search' %}">
             <!-- Form Row 1 -->

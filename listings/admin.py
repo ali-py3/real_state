@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Listing
+from .models import Listing, Category
 
 
 class ListingAdmin(admin.ModelAdmin):
@@ -15,3 +15,12 @@ class ListingAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Listing, ListingAdmin)
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'status',)
+    list_filter = (['status'])
+    search_fields = ('title', 'slug')
+    prepopulated_fields = {'slug': ('title',)}
+
+
+admin.site.register(Category, CategoryAdmin)
