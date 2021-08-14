@@ -25,7 +25,7 @@ price_choices = {
 }
 
 state_choices = {
-        'AK': 'Alaska',
+        'AK': 'rasht',
         'AL': 'Alabama',
         'AR': 'Arkansas',
         'AS': 'American Samoa',

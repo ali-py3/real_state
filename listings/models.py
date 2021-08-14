@@ -40,7 +40,7 @@ class Listing(models.Model):
     description = models.TextField(blank=True, verbose_name="توضیحات")
     price = models.IntegerField(verbose_name="قیمت")
     bedrooms = models.IntegerField(default=0, verbose_name="اتاق خواب")
-    bathrooms = models.DecimalField(default=0, max_digits=2, decimal_places=1, verbose_name="سرویس یهداشتی")
+    bathrooms = models.IntegerField(default=0, verbose_name="سرویس یهداشتی")
     garage = models.IntegerField(default=0, verbose_name="پارکینگ")
     sqft = models.IntegerField(verbose_name="فوت مربع")
     lot_size = models.DecimalField(max_digits=5, decimal_places=1, verbose_name="متراژ کلی")
